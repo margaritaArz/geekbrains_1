@@ -31,9 +31,8 @@ else:
 # и сообщаете об диапазоне допустимых. И просите ввести заного.
 # Допустим пользователь ввел 2, оно подходит, возводим в степень 2, и выводим 4
 
-number = int(input('Введите число '))
-while 0 < number > 10:
-    number = int(input('Введенное число не верно. Введите число от 0 до 10. '))
+while number <= 0 or number >= 10:
+    number = int(input('Введенное число не верно. Введите число от 1 до 10. '))
 print(number**2)
 
 
@@ -66,11 +65,15 @@ surname = (input('Введите вашу фамилию '))
 age = int(input('Введите ваш возраст '))
 weight = int(input('Введите ваш вес '))
 
-if age >= 30 and 50 > weight < 120:
+if age <= 30 and 50 < weight < 120:
     print('Поздравляю! Вы в хорошем состоянии')
-elif age > 30 and 50 > weight < 120:
+elif age <= 30 and (50 > weight or weight > 120):
+    print('Вам надо заниматься спортом')
+
+elif 40 >= age > 30 and (50 > weight or weight > 120):
     print('Вам необходимо начать вести здоровый образ жизни!')
-elif age > 40 and 50 > weight < 120:
+
+elif age > 40 and (50 > weight or weight > 120):
     print('Вам необходим врачебный осмотр')
 else:
-    print('Все отлично!')
+    print('Все отлично')
